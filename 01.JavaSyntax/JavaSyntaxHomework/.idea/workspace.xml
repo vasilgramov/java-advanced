@@ -79,8 +79,8 @@
       <file leaf-file-name="p06_convertFromBase7ToDecimal.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/p06_convertFromBase7ToDecimal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+            <state relative-caret-position="270">
+              <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,21 +98,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="p08_hitTheTarget.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/p08_hitTheTarget.java">
+      <file leaf-file-name="p09_characterMultiplier.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/p09_characterMultiplier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="43" lean-forward="true" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+            <state relative-caret-position="330">
+              <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="p09_characterMultiplier.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/p09_characterMultiplier.java">
+      <file leaf-file-name="p10_getFirstOddOrEvenElements.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/p10_getFirstOddOrEvenElements.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            <state relative-caret-position="60">
+              <caret line="4" column="44" lean-forward="false" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="p11_gameOfNames.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/p11_gameOfNames.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -145,6 +155,8 @@
         <option value="$PROJECT_DIR$/src/p07_oddEvenPairs.java" />
         <option value="$PROJECT_DIR$/src/p03_formattingNumbers.java" />
         <option value="$PROJECT_DIR$/src/p09_characterMultiplier.java" />
+        <option value="$PROJECT_DIR$/src/p10_getFirstOddOrEvenElements.java" />
+        <option value="$PROJECT_DIR$/src/p11_gameOfNames.java" />
       </list>
     </option>
   </component>
@@ -213,22 +225,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Application.p09_characterMultiplier">
-    <configuration default="false" name="p05_convertDecimalToBase7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="p05_convertDecimalToBase7" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="JavaSyntaxHomework" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.p10_getFirstOddOrEvenElements">
     <configuration default="false" name="p06_convertFromBase7ToDecimal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="p06_convertFromBase7ToDecimal" />
@@ -277,6 +274,21 @@
     <configuration default="false" name="p09_characterMultiplier" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="p09_characterMultiplier" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="JavaSyntaxHomework" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="p10_getFirstOddOrEvenElements" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="p10_getFirstOddOrEvenElements" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -670,19 +682,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.p05_convertDecimalToBase7" />
-      <item index="1" class="java.lang.String" itemvalue="Application.p06_convertFromBase7ToDecimal" />
-      <item index="2" class="java.lang.String" itemvalue="Application.p07_oddEvenPairs" />
-      <item index="3" class="java.lang.String" itemvalue="Application.p08_hitTheTarget" />
-      <item index="4" class="java.lang.String" itemvalue="Application.p09_characterMultiplier" />
+      <item index="0" class="java.lang.String" itemvalue="Application.p06_convertFromBase7ToDecimal" />
+      <item index="1" class="java.lang.String" itemvalue="Application.p07_oddEvenPairs" />
+      <item index="2" class="java.lang.String" itemvalue="Application.p08_hitTheTarget" />
+      <item index="3" class="java.lang.String" itemvalue="Application.p09_characterMultiplier" />
+      <item index="4" class="java.lang.String" itemvalue="Application.p10_getFirstOddOrEvenElements" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.p09_characterMultiplier" />
-        <item index="1" class="java.lang.String" itemvalue="Application.p08_hitTheTarget" />
-        <item index="2" class="java.lang.String" itemvalue="Application.p07_oddEvenPairs" />
-        <item index="3" class="java.lang.String" itemvalue="Application.p06_convertFromBase7ToDecimal" />
-        <item index="4" class="java.lang.String" itemvalue="Application.p05_convertDecimalToBase7" />
+        <item index="0" class="java.lang.String" itemvalue="Application.p10_getFirstOddOrEvenElements" />
+        <item index="1" class="java.lang.String" itemvalue="Application.p09_characterMultiplier" />
+        <item index="2" class="java.lang.String" itemvalue="Application.p08_hitTheTarget" />
+        <item index="3" class="java.lang.String" itemvalue="Application.p07_oddEvenPairs" />
+        <item index="4" class="java.lang.String" itemvalue="Application.p06_convertFromBase7ToDecimal" />
       </list>
     </recent_temporary>
   </component>
@@ -698,12 +710,12 @@
       <updated>1484654062587</updated>
       <workItem from="1484654064563" duration="474000" />
       <workItem from="1484654820366" duration="6545000" />
-      <workItem from="1484732821202" duration="5787000" />
+      <workItem from="1484732821202" duration="7739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12806000" />
+    <option name="totallyTimeSpent" value="14758000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="742" extended-state="1" />
@@ -748,7 +760,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -788,16 +800,6 @@
         <state relative-caret-position="105">
           <caret line="7" column="36" lean-forward="true" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/p06_convertFromBase7ToDecimal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -855,6 +857,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="13" lean-forward="true" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/p06_convertFromBase7ToDecimal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="33" lean-forward="false" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/p10_getFirstOddOrEvenElements.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="44" lean-forward="false" selection-start-line="4" selection-start-column="44" selection-end-line="4" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/p11_gameOfNames.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="8" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
           <folding />
         </state>
       </provider>
