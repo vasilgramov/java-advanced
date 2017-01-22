@@ -12,106 +12,99 @@ public class p13_evaluateExpression {
         for (int i = 0; i < tokens.length; i++) {
             String currentToken = tokens[i];
 
-            if (isInteger(currentToken, 10)) {
+            if (isInteger(currentToken, 10)) {  // if it is a number to the queue
                 outputQueue.addLast(currentToken);
-            } else {
-                if (isOperator(currentToken)) {
-                    greaterPrecedence(currentToken);
-                } else { // brackets ( || )
-                    if (currentToken.equals("("))
-                        operatorStack.add(currentToken);
-                    else {
-                        toLeftBracket();
-                    }
-                }
+            } else if (isOperator(currentToken)) {    // operator
+                popFromStackAddToQueue(currentToken);
+            } else {  // then bracket
+                if (currentToken.equals("("))
+                    operatorStack.addFirst(currentToken);
+                else
+                    toLeftBracket();
             }
         }
 
         while (operatorStack.size() > 0) {
-            outputQueue.addLast(operatorStack.removeLast());
+            outputQueue.addLast(operatorStack.removeFirst());
         }
 
-        double result = 0.0;
-
         ArrayDeque<Double> stack = new ArrayDeque<>();
-        for (String token : outputQueue) {
-            if (isInteger(token, 10)) {
-                stack.addLast(Double.parseDouble(token));
-            } else {
-                switch (token) {
-                    case "+":
-                        double number11 = stack.removeLast();
-                        double number12 = stack.removeLast();
-                        stack.addLast(number11 + number12);
-                        break;
-                    case "-":
-                        double number21 = stack.removeLast();
-                        double number22 = stack.removeLast();
-                        stack.addLast(number22 - number21);
-                        break;
-                    case "*":
-                        double number31 = stack.removeLast();
-                        double number32 = stack.removeLast();
-                        stack.addLast(number31 * number32);
-                        break;
-                    case "/":
-                        double number41 = stack.removeLast();
-                        double number42 = stack.removeLast();
-                        stack.addLast(number42 / number41);
-                        break;
+        while (outputQueue.size() > 0) {
+            String currentToken = outputQueue.removeFirst();
+
+            if (isInteger(currentToken, 10)) {
+                stack.addFirst(Double.parseDouble(currentToken));
+            } else { // + - * /
+                if (currentToken.equals("+")) {
+                    double popped = stack.removeFirst();
+                    double toAdd = stack.removeFirst();
+
+                    stack.addFirst(toAdd + popped);
+                } else if (currentToken.equals("-")) {
+                    double popped = stack.removeFirst();
+                    double toAdd = stack.removeFirst();
+
+                    stack.addFirst(toAdd - popped);
+                } else if (currentToken.equals("*")) {
+                    double popped = stack.removeFirst();
+                    double toAdd = stack.removeFirst();
+
+                    stack.addFirst(toAdd * popped);
+                } else if (currentToken.equals("/")) {
+                    double popped = stack.removeFirst();
+                    double toAdd = stack.removeFirst();
+
+                    stack.addFirst(toAdd / popped);
                 }
             }
         }
 
-        System.out.printf("%.2f", stack.peek());
+        System.out.printf("%.2f", stack.peekFirst());
+    }
+
+    private static void popFromStackAddToQueue(String currentToken) {
+        while (true) {
+            if (operatorStack.size() == 0) {
+                operatorStack.addFirst(currentToken);
+
+                return;
+            }
+
+            switch (currentToken) {
+                case "+":
+                case "-":
+                    if (operatorStack.peekFirst().equals("(")) {
+                        operatorStack.addFirst(currentToken);
+                        return;
+                    } else {
+                        outputQueue.addLast(operatorStack.removeFirst());
+                    }
+                    break;
+                case "*":
+                case "/":
+                    if (operatorStack.peekFirst().equals("*") || operatorStack.peekFirst().equals("/")) {
+                        outputQueue.addLast(operatorStack.removeFirst());
+                    }
+                    else {
+                        operatorStack.addFirst(currentToken);
+                        return;
+                    }
+
+                    break;
+            }
+        }
     }
 
     private static void toLeftBracket() {
-        while (!operatorStack.peekLast().equals("(")) {
-            outputQueue.addLast(operatorStack.removeLast());
+        while (!operatorStack.peekFirst().equals("(")) {
+            outputQueue.addLast(operatorStack.removeFirst());
         }
 
-        operatorStack.removeLast();
-    }
-
-    private static void greaterPrecedence(String token) {
-        if (operatorStack.size() == 0) {
-            operatorStack.addLast(token);
-            return;
-        }
-
-        if (token.equals("*") || token.equals("/")) {
-            operatorStack.addLast(token);
-            return;
-        }
-
-        while (true) {
-            String operator = operatorStack.peekLast();
-
-            if (operator.equals("(") || operator.equals(")")) {
-                operatorStack.addLast(token);
-                return;
-            } else {
-                switch (operator) {
-                    case "+":
-                    case "-":
-                        outputQueue.addLast(operatorStack.removeLast());
-                        operatorStack.addLast(token);
-                        return;
-                    case "*":
-                    case "/":
-                        outputQueue.addLast(operatorStack.removeLast());
-                        break;
-                }
-            }
-        }
+        operatorStack.removeFirst();
     }
 
     private static boolean isOperator(String currentToken) {
-        if (currentToken.equals("+") ||
-                currentToken.equals("-") ||
-                currentToken.equals("*") ||
-                currentToken.equals("/")) // check - ^
+        if (currentToken.equals("+") || currentToken.equals("-") || currentToken.equals("*") || currentToken.equals("/"))
             return true;
 
         return false;

@@ -12,76 +12,73 @@ public class p12_infixToPostfix {
         for (int i = 0; i < tokens.length; i++) {
             String currentToken = tokens[i];
 
-            if (isInteger(currentToken, 10)) {
+            if (/*isInteger(currentToken, 10) || */!isOperator(currentToken) && !currentToken.equals("(") && !currentToken.equals(")")) {  // if it is a number to the queue
                 outputQueue.addLast(currentToken);
-            } else {
-                if (isOperator(currentToken)) {
-                    greaterPrecedence(currentToken);
-                } else { // brackets ( || )
-                    if (currentToken.equals("("))
-                        operatorStack.add(currentToken);
-                    else {
-                        toLeftBracket();
-                    }
-                }
+            } else if (isOperator(currentToken)) {    // operator
+                popFromStackAddToQueue(currentToken);
+            } else {  // then bracket
+                if (currentToken.equals("("))
+                    operatorStack.addFirst(currentToken);
+                else
+                    toLeftBracket();
             }
         }
 
         while (operatorStack.size() > 0) {
-            outputQueue.addLast(operatorStack.removeLast());
+            outputQueue.addLast(operatorStack.removeFirst());
         }
+
 
         for (String token : outputQueue) {
             System.out.print(token + " ");
         }
+
+        System.out.println();
     }
 
-    private static void toLeftBracket() {
-        while (!operatorStack.peekLast().equals("(")) {
-            outputQueue.addLast(operatorStack.removeLast());
-        }
-
-        operatorStack.removeLast();
-    }
-
-    private static void greaterPrecedence(String token) {
-        if (operatorStack.size() == 0) {
-            operatorStack.addLast(token);
-            return;
-        }
-
-        if (token.equals("*") || token.equals("/")) {
-            operatorStack.addLast(token);
-            return;
-        }
-
+    private static void popFromStackAddToQueue(String currentToken) {
         while (true) {
-            String operator = operatorStack.peekLast();
+            if (operatorStack.size() == 0) {
+                operatorStack.addFirst(currentToken);
 
-            if (operator.equals("(") || operator.equals(")")) {
-                operatorStack.addLast(token);
                 return;
-            } else {
-                switch (operator) {
-                    case "+":
-                    case "-":
-                        outputQueue.addLast(operatorStack.removeLast());
-                        operatorStack.addLast(token);
+            }
+
+            switch (currentToken) {
+                case "+":
+                case "-":
+                    if (operatorStack.peekFirst().equals("(")) {
+                        operatorStack.addFirst(currentToken);
                         return;
-                    case "*":
-                    case "/":
-                        outputQueue.addLast(operatorStack.removeLast());
-                        break;
-                }
+                    } else {
+                        outputQueue.addLast(operatorStack.removeFirst());
+                    }
+                    break;
+                case "*":
+                case "/":
+                    if (operatorStack.peekFirst().equals("*") || operatorStack.peekFirst().equals("/")) {
+                        outputQueue.addLast(operatorStack.removeFirst());
+                    }
+                    else {
+                        operatorStack.addFirst(currentToken);
+                        return;
+                    }
+
+                    break;
             }
         }
     }
 
+    private static void toLeftBracket() {
+        while (!operatorStack.peekFirst().equals("(")) {
+            outputQueue.addLast(operatorStack.removeFirst());
+        }
+
+        operatorStack.removeFirst();
+    }
+
     private static boolean isOperator(String currentToken) {
-        if (currentToken.equals("+") ||
-                currentToken.equals("-") ||
-                currentToken.equals("*") ||
-                currentToken.equals("/")) // check - ^
+        if (currentToken.equals("+") || currentToken.equals("-") || currentToken.equals("*") || currentToken.equals("/"))
             return true;
 
         return false;
