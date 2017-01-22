@@ -1,57 +1,107 @@
-import java.time.Clock;
 import java.util.ArrayDeque;
 import java.util.Scanner;
 
 public class p06_robotics {
+    static long time = 0L;
+    static ArrayDeque<Robot> robots = new ArrayDeque<>();
+    static ArrayDeque<String> products = new ArrayDeque<>();
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        ArrayDeque<Robot> queuedRobots = new ArrayDeque<>();
+        String[] robotsData = in.nextLine().split(";");
+        String[] timeArgs = in.nextLine().split(":");
 
-        String[] robots = in.nextLine().split(";");
-        for (int i = 0; i < robots.length; i++) {
-            String[] robotArgs = robots[i].split("-");
-            String name = robotArgs[0];
-            long processTime = Long.parseLong(robotArgs[1]);
+        getStartTime(timeArgs);
 
-            Robot robot = new Robot(name, processTime);
-            queuedRobots.addLast(robot);
-        }
-
-        String[] time = in.nextLine().split(":");
-        int hours = Integer.parseInt(time[0]);
-        int minutes = Integer.parseInt(time[1]);
-        int seconds = Integer.parseInt(time[2]);
+        getRobotsData(robotsData);
 
         String command = in.nextLine();
-        while (!command.equals("End")) {
-            long secondsToAdd = 1L;
-            Robot currentRobot = queuedRobots.getFirst();
+        if (command.equals("End"))
+            return;
 
-            currentRobot.setProduct(command);
+        time++;
+        boolean shouldRead = true;
+        while (true) {
+            if (!shouldRead && products.size() == 0)
+                return;
 
-            seconds += secondsToAdd;
+            String currentProduct = new String();
+            if (shouldRead)
+                currentProduct = command;
+            else
+                currentProduct = products.removeFirst();
 
+            boolean hasFound = false;
+            for (Robot robot : robots) {
+                if (robot.getTime() <= time) {
+                    robot.setProduct(currentProduct);
+                    robot.setTime(time);
+                    System.out.println(robot);
+                    robot.setTime(time + robot.getProcessTime());
+                    hasFound = true;
+                    break;
+                }
+            }
 
-            command = in.nextLine();
+            if (!hasFound)
+                products.addLast(currentProduct);
+
+            if (shouldRead)
+                command = in.nextLine();
+
+            if (command.equals("End"))
+                shouldRead = false;
+
+            time++;
         }
     }
 
-    private static class Robot {
+    private static void getStartTime(String[] timeArgs) {
+        long hours = Long.parseLong(timeArgs[0]);
+        long mins = Long.parseLong(timeArgs[1]);
+        time = Long.parseLong(timeArgs[2]);
+
+        mins += hours * 60;
+        time += mins * 60;
+    }
+
+    private static void getRobotsData(String[] robotsData) {
+        for (String currentRobot : robotsData) {
+            String[] currentRobotArgs = currentRobot.split("-");
+            String  name = currentRobotArgs[0];
+            int processTime = Integer.parseInt(currentRobotArgs[1]);
+
+            Robot robot = new Robot(name, processTime, time);
+            robots.addLast(robot);
+        }
+    }
+
+    private static class Robot implements Comparable<Robot> {
         private String name;
         private long processTime;
+        private long time;
         private String product;
 
         public Robot(String name, long processTime) {
             this.setName(name);
             this.setProcessTime(processTime);
+
+            this.setTime(p06_robotics.time);
+        }
+
+        public Robot(String name, long processTime, long time) {
+            this.setName(name);
+            this.setProcessTime(processTime);
+
+            this.setTime(time);
         }
 
         public String getName() {
             return name;
         }
 
-        public void setName(String name) {
+        private void setName(String name) {
             this.name = name;
         }
 
@@ -59,8 +109,16 @@ public class p06_robotics {
             return processTime;
         }
 
-        public void setProcessTime(long processTime) {
+        private void setProcessTime(long processTime) {
             this.processTime = processTime;
+        }
+
+        public long getTime() {
+            return time;
+        }
+
+        public void setTime(long time) {
+            this.time = time;
         }
 
         public String getProduct() {
@@ -70,6 +128,30 @@ public class p06_robotics {
         public void setProduct(String product) {
             this.product = product;
         }
+
+        @Override
+        public int compareTo(Robot robot) {
+            if (this.getTime() > robot.getTime())
+                return 1;
+             else if (this.getTime() < robot.getTime())
+                 return -1;
+
+             return 0;
+        }
+
+        @Override
+        public String toString() {
+            long currentSeconds = this.getTime();
+            long hours = ((int) (currentSeconds / 3600)) % 24;
+            long remainder = currentSeconds % 3600;
+            long mins = remainder / 60;
+            currentSeconds  = remainder % 60;
+
+            String hoursToPrint = hours <= 9 ? "0" + Long.toString(hours) : Long.toString(hours);
+            String minsToPrint = mins <= 9 ? "0" + Long.toString(mins) : Long.toString(mins);
+            String secondsToPrint = currentSeconds <= 9 ? "0" + Long.toString(currentSeconds) : Long.toString(currentSeconds);
+
+            return this.getName() + " - " + this.getProduct() + " [" + hoursToPrint + ":" + minsToPrint + ":" + secondsToPrint + "]";
+        }
     }
 }
-
