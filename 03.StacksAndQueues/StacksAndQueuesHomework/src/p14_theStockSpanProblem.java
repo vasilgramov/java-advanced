@@ -1,11 +1,14 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayDeque;
 import java.util.Scanner;
 
 public class p14_theStockSpanProblem {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        int n = Integer.parseInt(in.nextLine());
+        int n = Integer.parseInt(reader.readLine());
         int[] price = new int[n];
         ArrayDeque<Integer> st = new ArrayDeque<>();
         st.addFirst(0);
@@ -16,9 +19,10 @@ public class p14_theStockSpanProblem {
         if (n == 1)
             return;
 
-        price[0] = Integer.parseInt(in.nextLine());
+        StringBuilder output = new StringBuilder();
+        price[0] = Integer.parseInt(reader.readLine());
         for (int i = 1; i < n; i++) {
-            price[i] = Integer.parseInt(in.nextLine());
+            price[i] = Integer.parseInt(reader.readLine());
 
             while (st.size() != 0 && price[st.peekFirst()] <= price[i])
                 st.removeFirst();
@@ -27,7 +31,9 @@ public class p14_theStockSpanProblem {
 
             st.addFirst(i);
 
-            System.out.println(S[i]);
+            output.append(S[i] + "\n");
         }
+
+        System.out.println(output);
     }
 }

@@ -14,7 +14,7 @@ public class p12_infixToPostfix {
 
             if (/*isInteger(currentToken, 10) || */!isOperator(currentToken) && !currentToken.equals("(") && !currentToken.equals(")")) {  // if it is a number to the queue
                 outputQueue.addLast(currentToken);
-            } else if (isOperator(currentToken)) {    // operator
+            } else if (isOperator(currentToken)) {
                 popFromStackAddToQueue(currentToken);
             } else {  // then bracket
                 if (currentToken.equals("("))
