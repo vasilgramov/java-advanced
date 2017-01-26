@@ -26,30 +26,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="p07_fixEmails.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/p07_fixEmails.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="21" column="38" lean-forward="false" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="p08_handsOfCards.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/p08_handsOfCards.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="38" column="52" lean-forward="false" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="p09_userLogs.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/p09_userLogs.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -119,11 +95,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="p16_targetPractice.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="p16_targetPractice.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/p16_targetPractice.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="83" column="49" lean-forward="true" selection-start-line="83" selection-start-column="49" selection-end-line="83" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="p17_legoBlock.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/p17_legoBlock.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="31" column="45" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="p18_radioactiveBunnies.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/p18_radioactiveBunnies.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -168,6 +166,8 @@
         <option value="$PROJECT_DIR$/src/p13_srubskoUnleashed.java" />
         <option value="$PROJECT_DIR$/src/p14_dragonArmy.java" />
         <option value="$PROJECT_DIR$/src/p16_targetPractice.java" />
+        <option value="$PROJECT_DIR$/src/p17_legoBlock.java" />
+        <option value="$PROJECT_DIR$/src/p18_radioactiveBunnies.java" />
       </list>
     </option>
   </component>
@@ -236,22 +236,7 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="extract.method.default.visibility" value="private" />
   </component>
-  <component name="RunManager" selected="Application.p16_targetPractice">
-    <configuration default="false" name="p11_logsAggregator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="p11_logsAggregator" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="SetsAndMapsHomework" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.p17_legoBlock">
     <configuration default="false" name="p12_legendaryFarming" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="p12_legendaryFarming" />
@@ -300,6 +285,21 @@
     <configuration default="false" name="p16_targetPractice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="p16_targetPractice" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="SetsAndMapsHomework" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="p17_legoBlock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="p17_legoBlock" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -693,19 +693,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.p11_logsAggregator" />
-      <item index="1" class="java.lang.String" itemvalue="Application.p12_legendaryFarming" />
-      <item index="2" class="java.lang.String" itemvalue="Application.p13_srubskoUnleashed" />
-      <item index="3" class="java.lang.String" itemvalue="Application.p14_dragonArmy" />
-      <item index="4" class="java.lang.String" itemvalue="Application.p16_targetPractice" />
+      <item index="0" class="java.lang.String" itemvalue="Application.p12_legendaryFarming" />
+      <item index="1" class="java.lang.String" itemvalue="Application.p13_srubskoUnleashed" />
+      <item index="2" class="java.lang.String" itemvalue="Application.p14_dragonArmy" />
+      <item index="3" class="java.lang.String" itemvalue="Application.p16_targetPractice" />
+      <item index="4" class="java.lang.String" itemvalue="Application.p17_legoBlock" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.p16_targetPractice" />
-        <item index="1" class="java.lang.String" itemvalue="Application.p14_dragonArmy" />
-        <item index="2" class="java.lang.String" itemvalue="Application.p13_srubskoUnleashed" />
-        <item index="3" class="java.lang.String" itemvalue="Application.p12_legendaryFarming" />
-        <item index="4" class="java.lang.String" itemvalue="Application.p11_logsAggregator" />
+        <item index="0" class="java.lang.String" itemvalue="Application.p17_legoBlock" />
+        <item index="1" class="java.lang.String" itemvalue="Application.p16_targetPractice" />
+        <item index="2" class="java.lang.String" itemvalue="Application.p14_dragonArmy" />
+        <item index="3" class="java.lang.String" itemvalue="Application.p13_srubskoUnleashed" />
+        <item index="4" class="java.lang.String" itemvalue="Application.p12_legendaryFarming" />
       </list>
     </recent_temporary>
   </component>
@@ -722,12 +722,12 @@
       <workItem from="1485266302721" duration="4797000" />
       <workItem from="1485360172251" duration="13578000" />
       <workItem from="1485431994233" duration="5447000" />
-      <workItem from="1485437858011" duration="13372000" />
+      <workItem from="1485437858011" duration="15315000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37194000" />
+    <option name="totallyTimeSpent" value="39137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="26" width="1366" height="742" extended-state="1" />
@@ -743,12 +743,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42351046" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31400967" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18664643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19119878" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1151,6 +1151,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="83" column="49" lean-forward="true" selection-start-line="83" selection-start-column="49" selection-end-line="83" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/p17_legoBlock.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="31" column="45" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/p18_radioactiveBunnies.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
           <folding />
         </state>
       </provider>
