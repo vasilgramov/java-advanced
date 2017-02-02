@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
@@ -12,7 +11,7 @@ public class p14_magicExchangeableWords {
 
         HashSet<Character> firstSet = new HashSet<>();
         HashSet<Character> secondSet = new HashSet<>();
-        HashMap<Character, Character> secondBySymbol = new HashMap<>();
+
         for (int i = 0; i < first.length(); i++) {
             firstSet.add(first.charAt(i));
         }
@@ -21,9 +20,6 @@ public class p14_magicExchangeableWords {
             secondSet.add(second.charAt(i));
         }
 
-        if (firstSet.size() == secondSet.size())
-            System.out.println("true");
-        else
-            System.out.println("false");
+        System.out.println(firstSet.size() == secondSet.size() ? "true" : "false" );
     }
 }
