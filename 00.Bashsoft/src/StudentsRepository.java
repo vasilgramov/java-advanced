@@ -1,46 +1,62 @@
+import jdk.nashorn.internal.runtime.regexp.joni.Regex;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by vladix on 4/14/17.
  */
 public class StudentsRepository {
 
-    public static boolean isDataInitialized = false;
-    public static Map<String, Map<String, List<Integer>>> studentsByCourse;
+    private static boolean isDataInitialized = false;
+    private static Map<String, Map<String, List<Integer>>> studentsByCourse;
 
+    private static final String DATA_VALIDATION_PATTERN =
+            "([A-Z]{1}[a-zA-Z+#]+_(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)_(?:2014|2015|2016|2017))\\s+([A-Z][a-z]{1,3}[0-9]{2}_[0-9]{2,4})\\s+([0-9]{1,3})";
 
-    public static void initData() {
+    public static void initData(String fileName) throws IOException {
         if (isDataInitialized) {
             OutputWriter.displayException(ExceptionMessages.DATA_ALREADY_INITIALIZED);
             return;
         }
 
         studentsByCourse = new HashMap<>();
-        readData();
+        readData(fileName);
     }
 
-    public static void readData() {
-        Scanner in = new Scanner(System.in);
+    public static void readData(String fileName) throws IOException {
+        String filePath = SessionData.currentPath + "/" + fileName;
+        List<String> lines  = Files.readAllLines(Paths.get(filePath));
 
-        String input = in.nextLine();
-        while (!input.equals("")) {
-            String[] tokens = input.split("\\s+");
-            String course = tokens[0];
-            String student = tokens[1];
-            int mark = Integer.parseInt(tokens[2]);
+        Pattern pattern = Pattern.compile(DATA_VALIDATION_PATTERN);
+        Matcher matcher;
 
-            if (!studentsByCourse.containsKey(course)) {
-                studentsByCourse.put(course, new LinkedHashMap<>());
+        for (int i = 0; i < lines.size(); i++) {
+            String line = lines.get(i);
+            matcher = pattern.matcher(line);
+            if (!line.isEmpty() && matcher.find()) {
+                String[] tokens = line.split("\\s+");
+                String course = tokens[0];
+                String student = tokens[1];
+                int mark = Integer.parseInt(tokens[2]);
+                if (mark >= 0 && mark <= 100) {
+                    if (!studentsByCourse.containsKey(course)) {
+                        studentsByCourse.put(course, new LinkedHashMap<>());
+                    }
+
+                    if (!studentsByCourse.get(course).containsKey(student)) {
+                        studentsByCourse.get(course).put(student, new ArrayList<>());
+                    }
+
+                    studentsByCourse.get(course).get(student).add(mark);
+                }
             }
-
-            if (!studentsByCourse.get(course).containsKey(student)) {
-                studentsByCourse.get(course).put(student, new ArrayList<>());
-            }
-
-            studentsByCourse.get(course).get(student).add(mark);
-            input = in.nextLine();
         }
-
 
         isDataInitialized = true;
         System.out.println("Data read.");
@@ -93,7 +109,4 @@ public class StudentsRepository {
 
         return true;
     }
-
-
-
 }

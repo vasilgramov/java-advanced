@@ -13,4 +13,5 @@ public class ExceptionMessages {
 
     public static final String NOT_EXISTING_STUDENT = "Student %s does not exist!";
 
+    public static final String INVALID_PATH = "Invalid path!";
 }
