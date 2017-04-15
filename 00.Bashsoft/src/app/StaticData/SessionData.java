@@ -1,3 +1,5 @@
+package app.StaticData;
+
 /**
  * Created by vladix on 4/15/17.
  */

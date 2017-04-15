@@ -1,8 +1,8 @@
-import java.io.File;
+package app;
+
+import app.IO.InputReader;
+
 import java.io.IOException;
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Scanner;
 
 /**
  * Created by vladix on 4/14/17.
@@ -16,8 +16,8 @@ public class Main {
 //        -----------------------------------------------------------------------------------------
 
 
-//        StudentsRepository.initData();
-//        StudentsRepository.getStudentByCourse("Unity");
+//        app.Repository.StudentsRepository.initData();
+//        app.Repository.StudentsRepository.getStudentByCourse("Unity");
 
 
 //        -----------------------------------------------------------------------------------------
@@ -26,21 +26,21 @@ public class Main {
 //        String test1Path = "/home/vladix/Programmig/JavaAdvanced/00.Bashsoft/03.test1.txt";
 //        String test2Path = "/home/vladix/Programmig/JavaAdvanced/00.Bashsoft/03.test2.txt";
 //
-//        Tester.compareContent(test1Path, test2Path);
+//        app.Judge.Tester.compareContent(test1Path, test2Path);
 
 
 //        -----------------------------------------------------------------------------------------
 
 
-//        IOManager.createDirectoryInsideFolder("pesho");
+//        app.IO.IOManager.createDirectoryInsideFolder("pesho");
 
 //        Scanner in = new Scanner(System.in);
 //        String command = in.nextLine();
 //        while (!command.equals("exit")) {
-//            IOManager.changeCurrentDirRelativePath(command);
+//            app.IO.IOManager.changeCurrentDirRelativePath(command);
 //
 //
-//            System.out.println(SessionData.currentPath);
+//            System.out.println(app.StaticData.SessionData.currentPath);
 //            command = in.nextLine();
 //        }
 

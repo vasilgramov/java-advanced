@@ -1,3 +1,7 @@
+package app.Judge;
+
+import app.IO.OutputWriter;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;

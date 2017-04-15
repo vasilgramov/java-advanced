@@ -1,3 +1,10 @@
+package app;
+
+import app.IO.IOManager;
+import app.Judge.Tester;
+import app.Repository.StudentsRepository;
+import app.StaticData.SessionData;
+
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -36,8 +43,10 @@ public class CommandInterpreter {
                 tryReadDBFromFile(line, tokens);
                 break;
             case "filter":
+                tryPrintFilteredStudentsRepository(line, tokens);
                 break;
             case "order":
+                tryPrintOrderedStudentsRepository(line, tokens);
                 break;
             case "download":
                 break;
@@ -57,6 +66,30 @@ public class CommandInterpreter {
                 break;
         }
 
+    }
+
+    private static void tryPrintOrderedStudentsRepository(String line, String[] tokens) {
+        if (tokens.length != 4) {
+            return;
+        }
+
+        String course = tokens[1];
+        String filter = tokens[2];
+        int numberOfStudents = Integer.parseInt(tokens[3]);
+
+        StudentsRepository.printOrderedStudents(course, filter, numberOfStudents);
+    }
+
+    private static void tryPrintFilteredStudentsRepository(String line, String[] tokens) {
+        if (tokens.length != 4) {
+            return;
+        }
+
+        String course = tokens[1];
+        String filter = tokens[2];
+        int numberOfStudents = Integer.parseInt(tokens[3]);
+
+        StudentsRepository.printFilteredStudents(course, filter, numberOfStudents);
     }
 
     private static void tryShowWantedCourses(String line, String[] tokens) {

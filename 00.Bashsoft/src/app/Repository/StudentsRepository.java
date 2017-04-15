@@ -1,6 +1,9 @@
-import jdk.nashorn.internal.runtime.regexp.joni.Regex;
+package app.Repository;
 
-import java.io.File;
+import app.IO.OutputWriter;
+import app.StaticData.ExceptionMessages;
+import app.StaticData.SessionData;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -60,6 +63,22 @@ public class StudentsRepository {
 
         isDataInitialized = true;
         System.out.println("Data read.");
+    }
+
+    public static void printFilteredStudents(String course, String filter, int numberOfStudents) {
+        if (!isQueryForCoursePossible(course)) {
+            return;
+        }
+
+        RepositoryFilters.printFilteredStuents(studentsByCourse.get(course), filter, numberOfStudents);
+    }
+
+    public static void printOrderedStudents(String course, String comparisonType, int numberOfStudents) {
+        if (!isQueryForCoursePossible(course)) {
+            return;
+        }
+
+        RepositorySorters.printSortedStudents(studentsByCourse.get(course), comparisonType, numberOfStudents);
     }
 
 
